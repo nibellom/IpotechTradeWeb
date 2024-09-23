@@ -1,0 +1,13 @@
+/* src/components/Navbar.css */
+.navbar {
+    transition: top 0.3s ease-in-out; /* Плавная анимация появления */
+  }
+  
+  .navbar-show {
+    top: 0; /* Показываем навбар */
+  }
+  
+  .navbar-hide {
+    top: -64px; /* Скрываем навбар за верхним краем окна */
+  }
+  

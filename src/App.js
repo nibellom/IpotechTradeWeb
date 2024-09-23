@@ -1,24 +1,28 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import { ThemeProvider } from '@mui/material/styles';
+import { Box } from '@mui/material';
+import theme from './theme';
+import Navbar from './components/Navbar';
+import AboutRobot from './components/AboutRobot';
+import HowToStart from './components/HowToStart';
+import Advantages from './components/Advantages';
+import Community from './components/Community';
+import './components/Navbar.css'; // Подключаем стили навбара
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className="App" >
+        <Navbar />
+        <Box sx={{ paddingTop: '64px' }}> {/* Указываем отступ для всего содержимого */}
+          <AboutRobot />
+          <HowToStart />
+          <Advantages />
+          <Community />
+        </Box>
+      </div>
+    </ThemeProvider>
   );
 }
 
