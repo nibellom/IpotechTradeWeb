@@ -7,7 +7,7 @@ import logo from '../assets/logo.png'; // Импортируем логотип
 const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const [drawerOpen, setDrawerOpen] = useState(false); // Состояние боковой панели
+  const [drawerOpen, setDrawerOpen] = useState(false); // Состояние боковой панелиb
   const isMobile = useMediaQuery('(max-width: 600px)'); // Проверяем, если ширина экрана меньше 600px
 
   // Определяем функцию handleScroll с useCallback, чтобы избежать зависимости
