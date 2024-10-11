@@ -2,7 +2,7 @@
   "name": "ipotech-trade-web",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://nibellom.github.io/IpotechTradeWeb",
+  "homepage": "https://ipotech-trade.ru",
   "dependencies": {
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
