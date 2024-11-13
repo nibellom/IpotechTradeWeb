@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.ba040969.css",
-    "main.js": "/static/js/main.a81e551e.js",
-    "static/js/453.04b3fb50.chunk.js": "/static/js/453.04b3fb50.chunk.js",
-    "static/media/about.png": "/static/media/about.5ecc02416dae09c1753f.png",
-    "static/media/logo.png": "/static/media/logo.ff7f4128a07c4c4d36be.png",
-    "index.html": "/index.html",
-    "main.ba040969.css.map": "/static/css/main.ba040969.css.map",
-    "main.a81e551e.js.map": "/static/js/main.a81e551e.js.map",
-    "453.04b3fb50.chunk.js.map": "/static/js/453.04b3fb50.chunk.js.map"
+    "main.css": "/IpotechTradeWeb/static/css/main.ba040969.css",
+    "main.js": "/IpotechTradeWeb/static/js/main.8797c67b.js",
+    "static/js/453.04b3fb50.chunk.js": "/IpotechTradeWeb/static/js/453.04b3fb50.chunk.js",
+    "static/media/about.png": "/IpotechTradeWeb/static/media/about.5ecc02416dae09c1753f.png",
+    "static/media/logo.png": "/IpotechTradeWeb/static/media/logo.ff7f4128a07c4c4d36be.png",
+    "index.html": "/IpotechTradeWeb/index.html",
+    "main.ba040969.css.map": "/IpotechTradeWeb/static/css/main.ba040969.css.map",
+    "main.8797c67b.js.map": "/IpotechTradeWeb/static/js/main.8797c67b.js.map",
+    "453.04b3fb50.chunk.js.map": "/IpotechTradeWeb/static/js/453.04b3fb50.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ba040969.css",
-    "static/js/main.a81e551e.js"
+    "static/js/main.8797c67b.js"
   ]
 }
