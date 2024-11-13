@@ -6,14 +6,15 @@ function WebApp() {
     const tg = window.Telegram.WebApp;
     
     // Настройка и отображение основной кнопки
-    tg.MainButton.setText("Отправить данные в бот");
+    tg.MainButton.setText("Вернуться в бот");
     tg.MainButton.show();
 
-    // Обработка нажатия на основную кнопку
+    // Обработчик нажатия основной кнопки
     tg.MainButton.onClick(() => {
-      const data = { parameter: 'Переход с webApp' }; // Параметр, который хотите передать
-      tg.sendData(JSON.stringify(data)); // Отправка данных в бот
-    });
+        const data = { parameter: 'значение' }; // Ваши данные для отправки
+        tg.sendData(JSON.stringify(data));      // Отправить данные в бот
+        tg.close();                             // Закрыть веб-приложение и вернуться в бот
+      });
 
     // Очистка при размонтировании компонента
     return () => {
