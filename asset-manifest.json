@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/IpotechTradeWeb/static/css/main.ba040969.css",
-    "main.js": "/IpotechTradeWeb/static/js/main.6c671dea.js",
+    "main.js": "/IpotechTradeWeb/static/js/main.f44a0738.js",
     "static/js/453.04b3fb50.chunk.js": "/IpotechTradeWeb/static/js/453.04b3fb50.chunk.js",
     "static/media/about.png": "/IpotechTradeWeb/static/media/about.5ecc02416dae09c1753f.png",
     "static/media/logo.png": "/IpotechTradeWeb/static/media/logo.ff7f4128a07c4c4d36be.png",
     "index.html": "/IpotechTradeWeb/index.html",
     "main.ba040969.css.map": "/IpotechTradeWeb/static/css/main.ba040969.css.map",
-    "main.6c671dea.js.map": "/IpotechTradeWeb/static/js/main.6c671dea.js.map",
+    "main.f44a0738.js.map": "/IpotechTradeWeb/static/js/main.f44a0738.js.map",
     "453.04b3fb50.chunk.js.map": "/IpotechTradeWeb/static/js/453.04b3fb50.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ba040969.css",
-    "static/js/main.6c671dea.js"
+    "static/js/main.f44a0738.js"
   ]
 }
