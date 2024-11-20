@@ -31,10 +31,10 @@ function WebApp() {
 
   return (
     <div>
-      <button 
+      {/* <button 
         className="btn waves-effect waves-light"
         style={{ backgroundColor: '#e4e2dd', color: 'black', marginTop: '20px' }}
-        onClick={handleSendData}>Вернуться в бот</button>
+        onClick={handleSendData}>Вернуться в бот</button> */}
     </div>
   );
 }

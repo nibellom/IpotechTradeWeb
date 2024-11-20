@@ -15,7 +15,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <div className="App" >
         <Navbar />
-        <Box sx={{ paddingTop: '64px' }}> {/* Указываем отступ для всего содержимого */}
+        <Box sx={{ paddingTop: '64px' }}> {/* Указываем отступ для всего содержимого */}          
           <AboutRobot />
           <HowToStart />
           <Advantages />

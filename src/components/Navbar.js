@@ -1,18 +1,35 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { AppBar, Toolbar, Button, Box, IconButton, Drawer, List, ListItem, ListItemText } from '@mui/material';
+import { AppBar, Toolbar, Button, Box, IconButton, Drawer, List, ListItem, ListItemText, Menu, MenuItem } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import LanguageIcon from '@mui/icons-material/Language';
 import useMediaQuery from '@mui/material/useMediaQuery'; // Для проверки размера экрана
 import logo from '../assets/logo.png'; // Импортируем логотип
+import { useTranslation } from 'react-i18next';
 
 const Navbar = () => {
+  const { t, i18n } = useTranslation();
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const [drawerOpen, setDrawerOpen] = useState(false); // Состояние боковой панелиb
-  const isMobile = useMediaQuery('(max-width: 600px)'); // Проверяем, если ширина экрана меньше 600px
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const isMobile = useMediaQuery('(max-width: 600px)');
 
-  // Определяем функцию handleScroll с useCallback, чтобы избежать зависимости
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+
+  const handleLanguageMenu = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const changeLanguage = (lang) => {
+    i18n.changeLanguage(lang);
+    handleClose();
+  };
+
   const handleScroll = useCallback(() => {
-    // Логику скрытия применяем только для больших экранов
     if (!isMobile) {
       const currentScrollY = window.scrollY;
 
@@ -47,37 +64,55 @@ const Navbar = () => {
   };
 
   const menuItems = [
-    { text: 'О нас', link: '#about-robot' },
-    { text: 'Как начать', link: '#how-to-start' },
-    { text: 'Преимущества', link: '#advantages' },
-    { text: 'Комьюнити', link: '#community' },
+    { text: t('about'), link: '#about-robot' },
+    { text: t('how_to_start'), link: '#how-to-start' },
+    { text: t('advantages'), link: '#advantages' },
+    { text: t('community'), link: '#community' },
   ];
 
   return (
     <>
       <AppBar
         position="fixed"
-        sx={{ backgroundColor: '#e4e2dd' }} // Цвет фона навбара как у логотипа
+        sx={{ backgroundColor: '#e4e2dd' }}
         className={`navbar ${showNavbar ? 'navbar-show' : 'navbar-hide'}`}
         onMouseEnter={handleMouseEnter}
       >
         <Toolbar>
-          {/* Логотип */}
           <Box sx={{ flexGrow: 1 }}>
             <img src={logo} alt="Крипторобот" style={{ height: '50px' }} />
           </Box>
 
-          {/* Вариант для больших экранов */}
           {!isMobile && (
             <>
-              <Button color="inherit" href="#about-robot">О нас</Button>
-              <Button color="inherit" href="#how-to-start">Как начать</Button>
-              <Button color="inherit" href="#advantages">Преимущества</Button>
-              <Button color="inherit" href="#community">Комьюнити</Button>
+              {menuItems.map((item, index) => (
+                <Button key={index} color="inherit" href={item.link}>
+                  {item.text}
+                </Button>
+              ))}
             </>
           )}
 
-          {/* Вариант для мобильных устройств */}
+          <IconButton
+            color="inherit"
+            onClick={handleLanguageMenu}
+            aria-controls={open ? 'language-menu' : undefined}
+            aria-haspopup="true"
+            aria-expanded={open ? 'true' : undefined}
+          >
+            <LanguageIcon />
+          </IconButton>
+
+          <Menu
+            id="language-menu"
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose}
+          >
+            <MenuItem onClick={() => changeLanguage('en')}>English</MenuItem>
+            <MenuItem onClick={() => changeLanguage('ru')}>Русский</MenuItem>
+          </Menu>
+
           {isMobile && (
             <IconButton
               edge="end"
@@ -91,12 +126,7 @@ const Navbar = () => {
         </Toolbar>
       </AppBar>
 
-      {/* Боковая панель для мобильных устройств */}
-      <Drawer
-        anchor="right"
-        open={drawerOpen}
-        onClose={toggleDrawer(false)}
-      >
+      <Drawer anchor="right" open={drawerOpen} onClose={toggleDrawer(false)}>
         <List>
           {menuItems.map((item, index) => (
             <ListItem button key={index} component="a" href={item.link}>
