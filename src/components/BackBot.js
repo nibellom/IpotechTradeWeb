@@ -1,12 +1,15 @@
 import React, { useEffect } from 'react';
+import { useTranslation } from 'react-i18next'; // Импортируем useTranslation
 
 function WebApp() {
+  const { t } = useTranslation(); // Хук для перевода
+
   useEffect(() => {
     // Инициализация Web App API
     const tg = window.Telegram.WebApp;
     
     // Настройка и отображение основной кнопки
-    tg.MainButton.setText("Вернуться в бот");
+    tg.MainButton.setText(`${t('backbot_title')}`);
     tg.MainButton.show();
 
     // Обработчик нажатия основной кнопки
