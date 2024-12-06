@@ -19,7 +19,7 @@ const fetchLanguageFromServer = async (userId) => {
   try {
     // const userId = 592196999; // Замените на реальный идентификатор пользователя
     const response = await axios.get(
-      `http://localhost:5001/user/${userId}/language` // Замените на ваш реальный адрес сервера
+      `https://ipotechserver-nibellom.amvera.io/user/${userId}/language` // Замените на ваш реальный адрес сервера
     );
     return response.data.language || 'ru'; // Возвращаем язык или 'ru' по умолчанию
   } catch (error) {
@@ -30,7 +30,7 @@ const fetchLanguageFromServer = async (userId) => {
 
 const initializeI18n = async () => {
   // Пытаемся получить язык от сервера
-  const userId = getUserIdFromTelegram(); // Получаем userId из Telegram
+  const userId = 592196999//getUserIdFromTelegram(); // Получаем userId из Telegram
   let serverLanguage
   if (userId) {
     serverLanguage = await fetchLanguageFromServer(userId)
