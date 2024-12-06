@@ -30,7 +30,7 @@ const fetchLanguageFromServer = async (userId) => {
 
 const initializeI18n = async () => {
   // Пытаемся получить язык от сервера
-  const userId = 592196999//getUserIdFromTelegram(); // Получаем userId из Telegram
+  const userId = getUserIdFromTelegram(); // Получаем userId из Telegram
   let serverLanguage
   if (userId) {
     serverLanguage = await fetchLanguageFromServer(userId)
